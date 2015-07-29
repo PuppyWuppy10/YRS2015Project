@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+  <head>
+    <h3> Upload your picture here</h3>
+
+  </head>
+  <style media="screen" type="text/css">
+
+    h3 {
+      padding-top: 70px;
+      padding-left: 270px;
+    }
+
+    p.upload{
+      margin-left: 800px;
+      margin-top: 100px;
+      width: 300px;
+      text-align: center;
+      background-color: #00FF09;
+      padding: 10px 0;
+      color : #FFFFFF;
+    }
+
+    p.upload:hover{
+      margin-left: 800px;
+      margin-top: 100px;
+      width: 300px;
+      text-align: center;
+      background-color: #00FF09;
+      padding: 10px 0;
+      color : #FFFFFF;
+      font-size: 24px;
+    }
+
+    p#mainParagraph {
+      padding-left: 800px;
+          padding-top: 60px;
+          width: 300px;
+          text-align: center;
+
+    }
+  </style>
+
+  <body background="p2background.png">
+  <p id = "mainParagraph"> Upload your picture so we can match your picture to the type
+  of plant and so we can determine whether it is poisonous. You can drag and drop your photos here or you can press the upload button for it to work.</p>
+  <p class= "upload">Upload</p>
+
+  <script type="text/javascript">
+
+  var script = document.createElement('script');
+  script.src = 'http://code.jquery.com/jquery-1.11.0.min.js';
+  script.type = 'text/javascript';
+  document.getElementsByTagName('head')[0].appendChild(script);
+
+  $("p.upload") .click(function(){
+
+<script src = "button_for_will_i_die.js"></script>
+
+    })
+  </script>
+  </body>
+
+</html>
