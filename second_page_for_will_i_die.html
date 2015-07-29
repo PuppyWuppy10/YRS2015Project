@@ -1,7 +1,19 @@
 <!doctype html>
 <html>
 
-  <head>
+<head>
+	<style>
+		html {
+			background: url(p2background.png) no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+	</style>
+
+	<script src="script.js"></script>
+
     <h3> Upload your picture here</h3>
 
   </head>
@@ -41,10 +53,14 @@
 
     }
   </style>
-
-  <body background="p2background.png">
   <p id = "mainParagraph"> Upload your picture so we can match your picture to the type
   of plant and so we can determine whether it is poisonous. You can drag and drop your photos here or you can press the upload button for it to work.</p>
+
+  <form method="GET" action="page3.html">
+    Plant Name: <input type="text" name="name" value="0">
+    <input type="submit" value="send">
+  </form>
+
   <p class= "upload">Upload</p>
 
   <script type="text/javascript">
