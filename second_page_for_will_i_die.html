@@ -2,6 +2,7 @@
 <html>
 
 <head>
+
 	<style>
 		html {
 			background: url(p2background.png) no-repeat center center fixed;
@@ -11,6 +12,11 @@
 			background-size: cover;
 		}
 	</style>
+
+	<head profile="http://www.w3.org/2005/10/profile">
+	<link rel="icon"
+		type="image/png"
+		href="http://diskus-direkt.de/images/GreenGlossIcon.png"
 
 	<script src="script.js"></script>
 
@@ -176,12 +182,13 @@ top: 188px;
 }
 
   </style>
-  <body background="p2background.png">
+
   <p id = "mainParagraph"> Upload your picture so we can match your picture to the type
   of plant and so we can determine whether it is poisonous. You can drag and drop your photos here or you can press the upload button for it to work.</p>
 
   <form method="GET" action="page3.html">
-    Plant Name: <input type="text" name="name" value="0">
+	<div style="margin-left: 64%">
+    Plant Name: <input type="text" name="name" value="">
     <input type="submit" value="send">
   </form>
 
