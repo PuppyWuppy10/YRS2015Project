@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Will I Die</title>
+
+	<style>
+		html {
+			background: url(Name.png) no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+	</style>
+
+	<script src="script.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body><center><font size='7'><font color="#7e2323">
+<script type="text/javascript">
+document.writeln ('Your plant is ' + GET('name') + ' .' );
+</script><br><center></font>
+
+<!--
+-- Input:
+http://foo.com/request?habitat="upland"&thornsp="no"&firp="yes"&name=""
+
+habitat: upland/downland/scrub/forest/sandy
+thornsp: does it have thorns? (yes/no)
+firp:    does it have fir? (yes/no)
+name:    common name (optional)
+
+-- Output:
+{"Latin name","common name","imgurl","wikiurl","habitat","thornsp","firp"}
+-->
+
+<div id="plant-image"></div>
+<script>
+(function() {
+  var plantAPI = "http://yrs2015plant-finnoleary.rhcloud.com/dummy?";
+  $.getJSON( plantAPI, {
+    thorns: "yes",
+    habitat: "scrub",
+    format: "json"
+  })
+    .done(function( data ) {
+      $.each( data.items, function( i, item ) {
+        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#plant-image" );
+        if ( i === 3 ) {
+          return false;
+        }
+      });
+    });
+})();
+</script>
+
+
+<div id="images"></div>
+ 
+<script>
+(function() {
+  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+  $.getJSON( flickerAPI, {
+    tags: "deadly nightshade",
+    tagmode: "any",
+    format: "json"
+  })
+    .done(function( data ) {
+      $.each( data.items, function( i, item ) {
+        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+        if ( i === 3 ) {
+          return false;
+        }
+      });
+    });
+})();
+</script>
+
+<img src="Boz.png"
+   style="position:relative; left: 100px; top: 0px; width:700px; height: 400px; border:none;"
+   alt="Box"
+   title="Box" />
+
+<a href="second_page_for_will_i_die.html"><img src="Upload Photo.png"
+   style="position:relative; right: 220px; top: 64px; width: 195px; height: 130px; broder: none;"
+   alt="Upload"
+   title="Upload" />
+
+<a href='Will-I-Die-HomePage.hml'><img src="Finished Button.png"
+   style="position:relative; right: 610px; top: 29px; width:139px; height: 69px; border:none;"
+   alt="Finished button"
+   title="Finish" />
+
+</body>
+
+</html>
