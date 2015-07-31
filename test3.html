@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
+<head>
 
-  <head>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
+<title>Test3</title>
+<script>
+function readURL(input) {
+       if (input.files && input.files[0]) {
+           var reader = new FileReader();
 
-  <body>
-    <script type="text/javascript">
-      document.writeln ('Your plant is ' + GET('name) + ' .');
-    </script>
-  </body>
+           reader.onload = function (e) {
+               $('#blah')
+                   .attr('src', e.target.result)
+                   .width(150)
+                   .height(200);
+           };
 
+           reader.readAsDataURL(input.files[0]);
+       }
+   }
+</script>
+<style>
+  article, aside, figure, footer, header, hgroup,
+  menu, nav, section { display: block; }
+</style>
+</head>
+<body>
+  <input type='file' onchange="readURL(this);" />
+  <img id="blah" src="#" alt="your image" />
+</body>
 </html>

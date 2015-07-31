@@ -3,6 +3,11 @@
 
 <head>
 
+	<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+	<meta charset=utf-8 />
+
 	<style>
 		html {
 			background: url(p2background.png) no-repeat center center fixed;
@@ -12,7 +17,7 @@
 			background-size: cover;
 		}
 	</style>
-	
+
 	<script src="script.js"></script>
 
     <h3> Upload your picture here</h3>
@@ -64,8 +69,8 @@
     border-radius:3px;
 
     position: absolute;
-left: 330px;
-top: 250px;
+		left: 296px;
+		top: 185px;
 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -176,16 +181,42 @@ top: 250px;
     color:red;
 }
 
+		article, aside, figure, footer, header, hgroup,
+		menu, nav, section { display: block; }
+
   </style>
 
   <p id = "mainParagraph"> Upload your picture so we can match your picture to the type
   of plant and so we can determine whether it is poisonous. You can drag and drop your photos here or you can press the upload button for it to work.</p>
 
-  <form method="GET" action="page3.html">
+  <form method="GET" action="page3-test.html">
 	<div style="margin-left: 64%">
     Plant Name: <input type="text" name="name" value="">
-    <input type="submit" value="send">
+		<input type="submit" value="send">
   </form>
+
+<!--<form method="GET" action="page3-test.html">
+<div style="margin-left: 64%">
+	Upload: <input type='file' name="picture-test" onchange="readURL(this);" />
+	<input type="submit" value="send">
+</form>-->
+
+<script>
+function readURL(input) {
+			 if (input.files && input.files[0]) {
+					 var reader = new FileReader();
+
+					 reader.onload = function (e) {
+							 $('#blah')
+									 .attr('src', e.target.result)
+									 .width(150)
+									 .height(200);
+					 };
+
+					 reader.readAsDataURL(input.files[0]);
+			 }
+	 }
+</script>
 
   <script type="text/javascript">
 
@@ -221,6 +252,9 @@ top: 250px;
 
   <!-- Our main JS file -->
   <script src="assets/js/script.js"></script>
+
+	<!-- Don't touch this -->
+
   </body>
 
 </html>
