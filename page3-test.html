@@ -12,10 +12,20 @@
 			-o-background-size: cover;
 			background-size: cover;
 		}
+<<<<<<< HEAD
 
 		article, aside, figure, footer, header, hgroup,
 		menu, nav, section { display: block; }
 
+=======
+div{
+    float:right;
+    margin:100px 50px 50px;
+}
+#stock-image{
+    margin-right:50px;
+}
+>>>>>>> 885c89bd14f80819762aa4781a9f599387500be8
 	</style>
 
 	<script src="script.js"></script>
@@ -46,13 +56,25 @@ Output:
 
 <script>
 
+<<<<<<< HEAD
+=======
+
+ 
+<script>
+>>>>>>> 885c89bd14f80819762aa4781a9f599387500be8
 var plantname = GET('name');
 (function() {
   var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
   $.getJSON( flickerAPI, {
+<<<<<<< HEAD
 		tags: plantname,
 		tagmode: "any",
 		format: "json"
+=======
+    tags: plantname,
+    tagmode: "any",
+    format: "json"
+>>>>>>> 885c89bd14f80819762aa4781a9f599387500be8
   })
     .done(function( data ) {
       $.each( data.items, function( i, item ) {
@@ -65,6 +87,7 @@ var plantname = GET('name');
 })();
 
 </script>
+<div id="stock-image"></div>
 
 <br><br><right><div>
   <img id="stock-image" style="position: absolute; top: 500; center: 5;"/>
