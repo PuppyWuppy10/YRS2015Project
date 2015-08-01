@@ -1,0 +1,16 @@
+#!/bin/sh
+
+cd ${OPENSHIFT_REPO_DIR}
+
+export XDG_CACHE_HOME=${OPENSHIFT_TMP_DIR}
+export HOME=${OPENSHIFT_REPO_DIR}
+export SBCL_HOME=${OPENSHIFT_DATA_DIR}
+
+nohup ${OPENSHIFT_DATA_DIR}/usr/bin/sbcl \
+    --core "${OPENSHIFT_DATA_DIR}/usr/lib/sbcl/sbcl-dist.core" \
+    --eval "(setf sb-impl::*default-external-format* :UTF-8)" \
+    --eval "(ql:quickload :hunchentoot)" \
+    --eval "(load \"${OPENSHIFT_REPO_DIR}/package.lisp\")" \
+    --eval "(load \"${OPENSHIFT_REPO_DIR}/webapp.lisp\")" \
+    --eval "(webapp:start-webapp)" \
+    --eval "(quit)"
